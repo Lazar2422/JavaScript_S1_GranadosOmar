@@ -1,5 +1,5 @@
 //###############################
-// Ejercicio Día1 JavaScript
+// Ejercicio Dia2 JavaScript
 //###############################
 function abrirJSONr(ruta) {
     return fetch(`./${ruta}.json`)
@@ -7,7 +7,7 @@ function abrirJSONr(ruta) {
         return response.json();
       });
 }
-const fs = require('fs');
+
 
 function guardarJSON(ruta, dic) {
   fs.writeFileSync(`./${ruta}.json`, JSON.stringify(dic, null, 2));
@@ -307,7 +307,55 @@ while (booleano==true){
                     else if(eleccion==4){
                         let ruta2="grupo"
                         let grupo=abrirJSONr(ruta2)
-
+                        let opcion2=prompt("Presione 1 para ver la información || 2 para editar || 3 para añadir || 4 para asignar estudiantes || 5 para salir")
+                        if (opcion2==1){
+                            for (let i=0;i<grupo[ruta2].length;i++){
+                                console.log("Grupo ",(i+1), " Salón: ", grupo[ruta2][i]["salon"], " Trainer: ", grupo[ruta2][i]["trainer"]," Horario: ",grupo[ruta2][i]["horario"]," Ruta: ",grupo[ruta2][i]["ruta"])
+                                for (let q=0;q<grupo[ruta2][i]["estudiantes"];q++){
+                                    console.log("Estudiante ", (i+1), " ", grupo[ruta2][i]["estudiantes"][q])
+                                }
+                            }
+                        }
+                        else if(opcion2==2){
+                            let editar=prompt(("Ingrese el numero del grupo a editar: ")-1)
+                            let rutita={
+                                "1":"Java",
+                                "2":"Node.js",
+                                "3":".Net"
+                            }
+                            grupo[ruta2][editar]["salon"]=prompt("Ingrese el nombre del salón asigando: ")
+                            grupo[ruta2][editar]["trainer"]=prompt("ngrese el nombre del trainer asignado: ")
+                            grupo[ruta2][editar]["horario"]=prompt("Ingrese el numero del horario asignado: ")
+                            grupo[ruta2][editar]["ruta"]=editar[prompt("Ingrese el numero de la ruta asignada: ")]
+                        }
+                        else if(opcion2==3){
+                            let ruta3="salones"
+                            let salon=abrirJSONr(ruta3)
+                            let trainer=abrirJSONr("trainers")
+                            for (let i=0;i<salon[ruta3].length;i++){
+                                console.log((i+1), " para salon ", salon[ruta3][i]["Nombre"])
+                            }
+                            let nombresalon=prompt((": ")-1)
+                            let nombresalon2=salon[ruta3][nombresalon]["Nombre"]
+                            let train=prompt("Ingrese el ID del trainer: ")
+                            let train2=""
+                            for (let i=0; i<trainer["trainer"];i++){
+                                if (trainer["trainers"][i]["ID"]==train){
+                                    train2=trainer["trainers"][i]["Nombre"]
+                                    break
+                                }
+                            }
+                            let rutita={
+                                "1":"Java",
+                                "2":"Node.js",
+                                "3":".Net"
+                            }
+                            grupo[ruta2].push({"salon":nombresalon2,"trainer":train2,"estudiatnes":[],"horario":prompt("Ingrese el numero del horario: "), "ruta":rutita[prompt("Ingrese el numero de la ruta")]})
+                            guardarJSON(ruta2,grupo)
+                        }
+                        else if(opcion2==4){
+                            
+                        }
                     }
                 }
             }
