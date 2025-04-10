@@ -354,7 +354,23 @@ while (booleano==true){
                             guardarJSON(ruta2,grupo)
                         }
                         else if(opcion2==4){
-                            
+                            let camper=abrirJSONr("estudiantes")
+                            let ingreso=prompt("Ingrese el ID del estudiante a añadir: ")
+                            for (let i=0;i<grupo[ruta2].length;i++){
+                                for (let q=0;q<camper["estudiantes"].length;q++){
+                                    if (grupo[ruta2][i]["ruta"]==camper["estudiantes"][q]["ruta"]){
+                                        if (grupo[ruta2][i]["estudiates"].length<33){
+                                            console.log("Salon ",(i+1)," disponible")
+                                        }
+                                    }
+                                }
+                            }
+                            let numerosalon=prompt(("Ingrese el numero del grupo")-1)
+                            for (let i=0;i<camper["estudiantes"].length;i++){
+                                if (camper["estudiantes"][i]["ID"]==ingreso){
+                                    grupo[ruta2][numerosalon]["estudiantes"].push({"Nombre":camper["estudiantes"][i]["Nombre"]})
+                                }
+                            }
                         }
                     }
                 }
