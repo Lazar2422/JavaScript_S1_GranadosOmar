@@ -15,7 +15,7 @@ function guardarJSON(ruta, dic) {
 let booleano=true;
 let perfil={};
 while (booleano==true){
-    let seleccion=prompt("Seleccione el perfil 1 para estudiantes || 2 para trainers || 3 para coordinador || 4 para salir: ");
+    let seleccion=prompt("Seleccione el perfil \n1 para estudiantes || 2 para trainers || 3 para coordinador || 4 para salir: ");
     if (seleccion==1){
         ruta="estudiantes";
         perfil=(abrirJSONr(ruta));
@@ -40,19 +40,12 @@ while (booleano==true){
                     }
                 })
                 if (booleano3==true){
-                    console.log()
+                    alert()
                     while (booleano3==true){  
                         let eleccion=prompt("Bienvenido/a "+nombre+" Presione 1 para ver tu información || 2 para ver tus notas || 3 para salir : ");
                         if (eleccion=="1"){
-                            console.log("Nombre: "+perfil[ruta][iterador]["Nombre"])
-                            console.log("ID: "+perfil[ruta][iterador]["ID"])
-                            console.log("Apellido: "+perfil[ruta][iterador]["Apellido"])
-                            console.log("Dirección: "+perfil[ruta][iterador]["dirección"])
-                            console.log("Teléfono: "+perfil[ruta][iterador]["celular"])
-                            console.log("Teléfono fijo: "+perfil[ruta][iterador]["fijo"])
-                            console.log("Estado: "+perfil[ruta][iterador]["estado"])
-                            console.log("Riesgo: "+perfil[ruta][iterador]["riesgo"])
-                            console.log("Ruta: "+perfil[ruta][iterador]["ruta"])
+                            alert("Nombre: "+perfil[ruta][iterador]["Nombre"],"\n ID: "+perfil[ruta][iterador]["ID"],"\nApellido: "+perfil[ruta][iterador]["Apellido"],"\nDirección: "+perfil[ruta][iterador]["dirección"],"\nTeléfono: "+perfil[ruta][iterador]["celular"],"\nTeléfono fijo: "+perfil[ruta][iterador]["fijo"],"\nEstado: "+perfil[ruta][iterador]["estado"],"\nRiesgo: "+perfil[ruta][iterador]["riesgo"],"\nRuta: "+perfil[ruta][iterador]["ruta"])
+            
                         }
                         else if (eleccion=="2"){
                             let ruta2="notas"
@@ -61,7 +54,7 @@ while (booleano==true){
                                 let iterador2=String(i);
                                 if (nombre==notas[ruta2][i]["Nombre"]){
                                     for (let q=0; q < notas[ruta2][i][ruta2][i][iterador2];q++){
-                                        console.log("Nombre: "+notas[ruta2][i][ruta2][i][iterador2]["Nombre"]+" Proyecto: "+notas[ruta2][i][ruta2][i][iterador2]["Proyecto"]+" Filtro: "+notas[ruta2][i][ruta2][i][iterador2]["Filtro"]+" Trabajos: "+notas[ruta2][i][ruta2][i][iterador2]["Trabajos"]+" Resultado: "+notas[ruta2][i][ruta2][i][iterador2]["Resultado"]);
+                                        alert("Nombre: "+notas[ruta2][i][ruta2][i][iterador2]["Nombre"]+" Proyecto: "+notas[ruta2][i][ruta2][i][iterador2]["Proyecto"]+" Filtro: "+notas[ruta2][i][ruta2][i][iterador2]["Filtro"]+" Trabajos: "+notas[ruta2][i][ruta2][i][iterador2]["Trabajos"]+" Resultado: "+notas[ruta2][i][ruta2][i][iterador2]["Resultado"]);
                                     }
                                 }
                             }
@@ -121,17 +114,17 @@ while (booleano==true){
                 while (booleano3==true){
                     let eleccion=prompt("Bienvenido/a "+nombre+" Presione 1 para ver su información || 2 para ver tus grupos || 3 para ver estudiantes || 4 para calificar estudiantes || 5 para salir : ");
                     if (eleccion=="1"){
-                        console.log("Nombre: "+perfil[ruta][iterador]["Nombre"])
-                        console.log("ID: "+perfil[ruta][iterador]["ID"])
-                        console.log("Apellido: "+perfil[ruta][iterador]["Apellido"])
-                        console.log("Ruta: "+perfil[ruta][iterador]["ruta"])
+                        alert("Nombre: "+perfil[ruta][iterador]["Nombre"])
+                        alert("ID: "+perfil[ruta][iterador]["ID"])
+                        alert("Apellido: "+perfil[ruta][iterador]["Apellido"])
+                        alert("Ruta: "+perfil[ruta][iterador]["ruta"])
                     }
                     else if (eleccion=="2"){
                         let ruta3="grupo";
                         let grupo=abrirJSONr(ruta3);
                         for (let i=0; i < grupo[ruta3].length; i++){
                             if (perfil[ruta2][iterador]["Nombre"]==grupo[ruta3][i]["trainer"]){
-                                console.log("Grupo #"+(i+1))
+                                alert("Grupo #"+(i+1))
                             }
                         }
                     }
@@ -139,7 +132,7 @@ while (booleano==true){
                         let ruta3="estudiantes";
                         let estudiantes=abrirJSONr(ruta3);
                         for (let i = 0; i < estudiantes[ruta3].length; i++){
-                            console.log("Estudiante "+ (i+1), " ID: "+estudiantes[ruta3][i]["ID"], " Nombre: "+estudiantes[ruta3][i]["Nombre"]," Apellido: ", estudiantes[ruta3][i]["Apellido"]," Direccion: ",estudiantes[ruta3][i]["direccion"]," Acudiente: ",estudiantes[ruta3][i]["acudiente"]," Telefono: "+estudiantes[ruta3][i]["celular"]," Telefono fijo: ", estudiantes[ruta3][i]["fijo"], " Estado: ", estudiantes[ruta3][i]["estado"], " Riesgo: ", estudiantes[ruta3][i]["riesgo"])
+                            alert("Estudiante "+ (i+1), " ID: "+estudiantes[ruta3][i]["ID"], " Nombre: "+estudiantes[ruta3][i]["Nombre"]," Apellido: ", estudiantes[ruta3][i]["Apellido"]," Direccion: ",estudiantes[ruta3][i]["direccion"]," Acudiente: ",estudiantes[ruta3][i]["acudiente"]," Telefono: "+estudiantes[ruta3][i]["celular"]," Telefono fijo: ", estudiantes[ruta3][i]["fijo"], " Estado: ", estudiantes[ruta3][i]["estado"], " Riesgo: ", estudiantes[ruta3][i]["riesgo"])
                         }
                     }
                     else if(eleccion=="4"){
@@ -152,7 +145,7 @@ while (booleano==true){
                                 iterador=i;
                                 for (let q=0; q < notas[ruta3][i]["notas"].length; q++)
                                     p=String(q);
-                                    console.log("Presione ",i, " Para calificar ", notas[ruta3][i]["notas"][q][p]["Nombre"])
+                                    alert("Presione ",i, " Para calificar ", notas[ruta3][i]["notas"][q][p]["Nombre"])
                             }
                         }
                         let calificar=prompt(": ")
@@ -204,7 +197,7 @@ while (booleano==true){
             }
             if (booleano3==true){
                 while (booleano3==true){
-                    console.log("Bienvenido/a ", nombre);
+                    alert("Bienvenido/a ", nombre);
                     let eleccion=prompt("1 para ver informacion || 2 para editar informacion || 3 para añadir informacion || 4 para grupos || 5 para calificar estudiantes || 6 para modulo de reportes || 7 para salir")
                     if (eleccion==1){
                         let eleccion2=prompt("De cual perfil quiere ver la información? (1 para camper || 2 para trainers || 3 para coordinadores)")
@@ -212,21 +205,21 @@ while (booleano==true){
                             let ruta2="estudiantes"
                             let estudiantes=abrirJSONr(ruta2)
                             for (let i = 0; i < estudiantes[ruta2].length; i++){
-                                console.log("Estudiante "+ (i+1), " ID: "+estudiantes[ruta2][i]["ID"], " Nombre: "+estudiantes[ruta2][i]["Nombre"]," Apellido: ", estudiantes[ruta2][i]["Apellido"]," Direccion: ",estudiantes[ruta2][i]["direccion"]," Acudiente: ",estudiantes[ruta2][i]["acudiente"]," Telefono: "+estudiantes[ruta2][i]["celular"]," Telefono fijo: ", estudiantes[ruta2][i]["fijo"], " Estado: ", estudiantes[ruta2][i]["estado"], " Riesgo: ", estudiantes[ruta2][i]["riesgo"])
+                                alert("Estudiante "+ (i+1), " ID: "+estudiantes[ruta2][i]["ID"], " Nombre: "+estudiantes[ruta2][i]["Nombre"]," Apellido: ", estudiantes[ruta2][i]["Apellido"]," Direccion: ",estudiantes[ruta2][i]["direccion"]," Acudiente: ",estudiantes[ruta2][i]["acudiente"]," Telefono: "+estudiantes[ruta2][i]["celular"]," Telefono fijo: ", estudiantes[ruta2][i]["fijo"], " Estado: ", estudiantes[ruta2][i]["estado"], " Riesgo: ", estudiantes[ruta2][i]["riesgo"])
                             }
                         }
                         else if (eleccion2==2){
                             let ruta2="trainers"
                             let trainers=abrirJSONr(ruta2)
                             for (let i=0;i<trainers[ruta2].length;i++){
-                                console.log("Trainer ",(i+1)," ID: ", trainers[ruta2][i]["ID"], " Nombre: ",trainers[ruta2][i]["Nombre"], " Apellido: ", trainers[ruta2][i]["Apellido"], " Ruta: ", trainers[ruta2][i]["Ruta"])
+                                alert("Trainer ",(i+1)," ID: ", trainers[ruta2][i]["ID"], " Nombre: ",trainers[ruta2][i]["Nombre"], " Apellido: ", trainers[ruta2][i]["Apellido"], " Ruta: ", trainers[ruta2][i]["Ruta"])
                             }
                         }
                         else if(eleccion2==3){
                             let ruta2="coordinador";
                             let coordinador=abrirJSONr(ruta2);
                             for (let i=0;i<coordinador[ruta2].length;i++){
-                                console.log("Coordinador ", (i+1), " ID: ", coordinador[ruta2][i]["ID"], " Nombre: ", coordinador[ruta2][i]["Nombre"])
+                                alert("Coordinador ", (i+1), " ID: ", coordinador[ruta2][i]["ID"], " Nombre: ", coordinador[ruta2][i]["Nombre"])
                             }
                         }
                     }
@@ -282,11 +275,11 @@ while (booleano==true){
                             let estudiantes=abrirJSONr(ruta2);
                             const rutita={
                                 "1":"Java",
-                                "2":"Node.js",
+                                "2":"NodeJS",
                                 "3":".Net"
                             }
                             let id=estudiantes[ruta2].length
-                            estudiantes[ruta2].push({"ID":id,"Nombre":prompt("Ingrese el nombre: "),"Apellido":prompt("Ingrese el apellido: "),"direccion":prompt("Ingrese la direccion: "),"acudiente":prompt("Ingrese el nombre del acudiente: "), "celular":prompt("Ingrese el telefono celular: "),"fijo":prompt("Ingrese el telefono fijo: "), "estado":"Inscrito","ruta":rutita[prompt("Ruta (1-Java || 2-Node.js || 3-.Net)")]})
+                            estudiantes[ruta2].push({"ID":id,"Nombre":prompt("Ingrese el nombre: "),"Apellido":prompt("Ingrese el apellido: "),"direccion":prompt("Ingrese la direccion: "),"acudiente":prompt("Ingrese el nombre del acudiente: "), "celular":prompt("Ingrese el telefono celular: "),"fijo":prompt("Ingrese el telefono fijo: "), "estado":"Inscrito","ruta":rutita[prompt("Ruta (1-Java || 2-NodeJS || 3-.Net)")]})
                             guardarJSON(ruta2,estudiantes)
                         }
                         else if(eleccion2==2){
@@ -310,9 +303,9 @@ while (booleano==true){
                         let opcion2=prompt("Presione 1 para ver la información || 2 para editar || 3 para añadir || 4 para asignar estudiantes || 5 para salir")
                         if (opcion2==1){
                             for (let i=0;i<grupo[ruta2].length;i++){
-                                console.log("Grupo ",(i+1), " Salón: ", grupo[ruta2][i]["salon"], " Trainer: ", grupo[ruta2][i]["trainer"]," Horario: ",grupo[ruta2][i]["horario"]," Ruta: ",grupo[ruta2][i]["ruta"])
+                                alert("Grupo ",(i+1), " Salón: ", grupo[ruta2][i]["salon"], " Trainer: ", grupo[ruta2][i]["trainer"]," Horario: ",grupo[ruta2][i]["horario"]," Ruta: ",grupo[ruta2][i]["ruta"])
                                 for (let q=0;q<grupo[ruta2][i]["estudiantes"];q++){
-                                    console.log("Estudiante ", (i+1), " ", grupo[ruta2][i]["estudiantes"][q])
+                                    alert("Estudiante ", (i+1), " ", grupo[ruta2][i]["estudiantes"][q])
                                 }
                             }
                         }
@@ -320,7 +313,7 @@ while (booleano==true){
                             let editar=prompt(("Ingrese el numero del grupo a editar: ")-1)
                             let rutita={
                                 "1":"Java",
-                                "2":"Node.js",
+                                "2":"NodeJS",
                                 "3":".Net"
                             }
                             grupo[ruta2][editar]["salon"]=prompt("Ingrese el nombre del salón asigando: ")
@@ -333,7 +326,7 @@ while (booleano==true){
                             let salon=abrirJSONr(ruta3)
                             let trainer=abrirJSONr("trainers")
                             for (let i=0;i<salon[ruta3].length;i++){
-                                console.log((i+1), " para salon ", salon[ruta3][i]["Nombre"])
+                                alert((i+1), " para salon ", salon[ruta3][i]["Nombre"])
                             }
                             let nombresalon=prompt((": ")-1)
                             let nombresalon2=salon[ruta3][nombresalon]["Nombre"]
@@ -347,7 +340,7 @@ while (booleano==true){
                             }
                             let rutita={
                                 "1":"Java",
-                                "2":"Node.js",
+                                "2":"NodeJS",
                                 "3":".Net"
                             }
                             grupo[ruta2].push({"salon":nombresalon2,"trainer":train2,"estudiatnes":[],"horario":prompt("Ingrese el numero del horario: "), "ruta":rutita[prompt("Ingrese el numero de la ruta")]})
@@ -360,7 +353,7 @@ while (booleano==true){
                                 for (let q=0;q<camper["estudiantes"].length;q++){
                                     if (grupo[ruta2][i]["ruta"]==camper["estudiantes"][q]["ruta"]){
                                         if (grupo[ruta2][i]["estudiates"].length<33){
-                                            console.log("Salon ",(i+1)," disponible")
+                                            alert("Salon ",(i+1)," disponible")
                                         }
                                     }
                                 }
@@ -371,7 +364,123 @@ while (booleano==true){
                                     grupo[ruta2][numerosalon]["estudiantes"].push({"Nombre":camper["estudiantes"][i]["Nombre"]})
                                 }
                             }
+                            // space guardarjson
                         }
+                        else if(opcion2==5){
+                            booleano3=false;
+                            booleano2=false;
+                        }
+                    }
+                    else if(eleccion==5){
+                        let ruta2="estudiantes"
+                        let estudiantes=abrirJSONr(ruta2)
+                        let ruta3="notas"
+                        let notas=abrirJSONr(ruta3)
+                        let estudiante=prompt("Ingrese el ID del estudiante a calificar: ")
+                        for (let i = 0; i < notas[ruta3].length; i++){
+                            if (estudiante==notas[ruta3][i]["ID"]){
+                                let calificar=prompt("Ingrese la calificación del estudiante")
+                                if (calificar>60){
+                                    estudiantes[ruta2][i]["estado"]="Aprobado"
+                                    notas[ruta3].push({"Nombre":estudiantes[ruta2][i]["Nombre"],"ID":estudiantes[ruta2][i]["ID"],"notas":[]})
+                                    // espacio guardarjson
+                                    let longitud=notas[ruta3].length-1
+                                    if (estudiantes[ruta2][i]["ruta"]=="Java"){
+                                        notas[ruta3][longitud][ruta3].push({ "0": [{ Nombre: "Intro", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "1": [{ Nombre: "Python", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "2": [{ Nombre: "HTML/CSS", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "3": [{ Nombre: "Scrum", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "4": [{ Nombre: "Git", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "5": [{ Nombre: "JavaScript", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "6": [{ Nombre: "Intro Back", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "7": [{ Nombre: "Intro BBDD", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "8": [{ Nombre: "MySQL", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "9": [{ Nombre: "Java", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "10": [{ Nombre: "PostgreSQL", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "11": [{ Nombre: "Springboot", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                    } else if (notas[rta1][i]["ruta"] === "NodeJS") {
+                                        notas[ruta3][longitud][ruta3].push({ "0": [{ Nombre: "Intro", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "1": [{ Nombre: "Python", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "2": [{ Nombre: "HTML/CSS", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "3": [{ Nombre: "Scrum", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "4": [{ Nombre: "Git", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "5": [{ Nombre: "JavaScript", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "6": [{ Nombre: "Intro Back", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "7": [{ Nombre: "Intro BBDD", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "8": [{ Nombre: "MongoDBL", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "9": [{ Nombre: "JavaScript", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "10": [{ Nombre: "MySQL", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "11": [{ Nombre: "Express", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                    } 
+                                    else if (notas[rta1][i]["ruta"] === ".Net") {
+                                        notas[ruta3][longitud][ruta3].push({ "0": [{ Nombre: "Intro", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "1": [{ Nombre: "Python", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "2": [{ Nombre: "HTML/CSS", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "3": [{ Nombre: "Scrum", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "4": [{ Nombre: "Git", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "5": [{ Nombre: "JavaScript", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "6": [{ Nombre: "Intro Back", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "7": [{ Nombre: "Intro BBDD", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "8": [{ Nombre: "MySQL", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "9": [{ Nombre: "C#", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "10": [{ Nombre: "PostgreSQLL", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                        notas[ruta3][longitud][ruta3].push({ "11": [{ Nombre: ".Net Core", Proyecto: 0, Filtro: 0, Trabajos: 0, Resultado: 0 }] });
+                                    }
+                                    // space guardarjson
+                                }
+                                else {
+                                    estudiantes[ruta2][i]["estado"]="no aprobado"
+                                }
+
+                            }
+                        }
+                        // guardarjson
+                    }
+                    else if(eleccion==6){
+                        let estudiantes=abrirJSONr("estudiantes")
+                        let trainers=abrirJSONr("trainers")
+                        let grupos=abrirJSONr("grupo")
+                        alert("Estudiantes inscritos: ")
+                        for (let i=0;i<estudiantes["estudiantes"].length;i++){
+                            if (estudiantes["estudiantes"][i]["estado"]=="Incrito"){
+                                alert(estudiantes["estudiantes"][i]["Nombre"])
+                            }
+                        }
+                        alert("Estudiantes aprobados: ")
+                        for (let i=0;i<estudiantes["estudiantes"].length;i++){
+                            if (estudiantes["estudiantes"][i]["estado"]=="Aprobado"){
+                                alert(estudiantes["estudiantes"][i]["Nombre"])
+                            }
+                        }
+                        alert("Trainers: ")
+                        for (let i=0;i<trainers["trainers"].length;i++){
+                            alert(trainers["trainers"][i]["Nombre"])
+                        }
+                        alert("Campers con rendimiento bajo: ")
+                        for (let i=0;i<estudiantes["estudiantes"].length;i++){
+                            if (estudiantes["estudiantes"][i]["riesgo"]=="alto"){
+                                alert(estudiantes["estudiantes"][i]["Nombre"])
+                            }
+                        }
+                        alert("Campers y Trainer asignados a un salon: ")
+                        for (let i=0;i<grupos["grupo"].length;i++){
+                            alert("Grupo ",(i+1), " Salón: ", grupos["grupo"][i]["salon"], " Trainer: ", grupos["grupo"][i]["trainer"])
+                            for (let q=0;q<grupos["grupo"][i]["estudiantes"];q++){
+                                alert("Estudiante ", (i+1), " ", grupos["grupo"][i]["estudiantes"][q])
+                            }
+                        }
+                        let notas=abrirJSONr("notas")
+                        alert("Notas de los estudiantes: ")
+                        for (let i=0; i<notas["notas"].length;i++){
+                            alert(estudiantes["estudiantes"][i]["Nombre"])
+                            for (let q=0;q<notas["notas"][i]["notas"];q++){
+                                alert("Nombre: ",notas["notas"][i]["nota"][q][q][0]["Nombre"],"\nProyecto: ", notas["notas"][i]["notas"][q][q][0]["Proyecto"], "\n Filtro: ", notas["notas"][i]["notas"][q][q][0]["Filtro"], "\n Trabajos: ", notas["notas"][i]["notas"][q][q][0]["Trabajos"], "\n Resultado: ", notas["notas"][i]["notas"][q][q][0]["Resultado"])
+                            }
+                        }
+                    }
+                    else if(eleccion==7){
+                        booleano3=false;
+                        booleano2=false;
                     }
                 }
             }
