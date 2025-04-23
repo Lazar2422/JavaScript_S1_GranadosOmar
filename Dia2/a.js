@@ -113,11 +113,11 @@ while (booleano==true){
             if (booleano3==true){
                 while (booleano3==true){
                     let eleccion=prompt("Bienvenido/a "+nombre+" Presione 1 para ver su información || 2 para ver tus grupos || 3 para ver estudiantes || 4 para calificar estudiantes || 5 para salir : ");
-                    if (eleccion=="1"){
-                        alert("Nombre: "+perfil[ruta][iterador]["Nombre"])
-                        alert("ID: "+perfil[ruta][iterador]["ID"])
-                        alert("Apellido: "+perfil[ruta][iterador]["Apellido"])
-                        alert("Ruta: "+perfil[ruta][iterador]["ruta"])
+                    if (eleccion==1){
+                        alert(`Nombre: ${perfil[ruta][iterador]["Nombre"]}`)
+                        alert(`ID: ${perfil[ruta][iterador]["ID"]}`)
+                        alert(`Apellido: ${perfil[ruta][iterador]["Apellido"]}`)
+                        alert(`Ruta: ${perfil[ruta][iterador]["ruta"]}`)
                     }
                     else if (eleccion=="2"){
                         let ruta3="grupo";
