@@ -1,0 +1,37 @@
+
+body{
+    margin: 0;
+    width: 1920px;
+    height: 1080px;
+    background-image: url(../img/fondo.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.botones{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    margin-left: -2vw;
+}
+.button1{
+    height: 8vh;
+    width: 15vw;
+    font-size: 2rem;
+    border: none;
+    margin-left: -2vw;
+    border-radius: 2vw;
+    background-color: #E0E0E0;
+}
+.button2{
+    height: 8vh;
+    width: 15vw;
+    font-size: 2rem;
+    border: none;
+    margin-left: -15vw;
+    border-radius: 2vw;
+    background-color: #E0E0E0;
+}
+.logo{
+    position: absolute;
+    margin-left: 35vw;
+}
