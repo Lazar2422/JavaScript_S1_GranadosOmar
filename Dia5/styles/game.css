@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.10em;
+}
+
+.fondo{
+    
+    position: absolute ;
+    background-image:url("../img/fondo.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    min-width: 10px;
+   
+}
+.arrow_back{
+    border: solid #FFD700;
+    margin-top: 3%;
+    margin-left: 3%;
+    width: 5vh;
+    height: 5vh;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+.arrow_back:hover{
+    cursor: pointer;
+    box-shadow: 15px 0.8vw 3vh black;
+}
+#jugador{
+    margin-left: 25%;
+    min-width: 10%;
+    margin-top: 35%;
+}
+.valor1{
+    width: 00px;
+}
+#jugador h2{ 
+    font-size: 1rem;
+    width: 10%;
+    height: 0%;
+    left: 13%;
+}
+#jugador img{
+    z-index: 999999;
+    width: 15%;
+    left: 13%;
+}
+.carta1{
+    margin-left: 0px;
+}
+.carta2{
+    margin-left: 00px;
+}
+.botones{
+    position: absolute;
+    width: 5%;
+    color: white;
+    margin-top: -30%;
+}
+#pedir{
+    position: absolute;
+    height: 8vh;
+    width: 15vw;
+    font-size: 2rem;
+    border: none;
+    margin-top: -15vh;
+    margin-left: 5vw;
+    border-radius: 2vw;
+    background-color: #FFD700;
+}
+#plantarse{
+    position: absolute;
+    height: 8vh;
+    width: 15vw;
+    font-size: 2rem;
+    margin-left: 5vw;
+    border: none;
+    margin-top: 0vh;
+    border-radius: 2vw;
+    background-color: #FFD700;
+}
+#nueva{
+    position: absolute;
+    height: 8vh;
+    width: 15vw;
+    font-size: 2rem;
+    margin-left: 5vw;
+    border: none;
+    margin-top: 15vh;
+    border-radius: 2vw;
+    background-color: #FFD700;
+}
+button:hover{
+    cursor: pointer;
+    margin-left: 40.5vw;
+    box-shadow: -5px 1vw 2vh black;
+    width: 14vw;
+    height: 7vh;
+}
