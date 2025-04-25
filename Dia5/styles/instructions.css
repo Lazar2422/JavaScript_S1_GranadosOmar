@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background: url(../img/fondoreglas.jpg);
+    background: url("../imagenes/fondoreglas.webp");
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, Helvetica, sans-serif;

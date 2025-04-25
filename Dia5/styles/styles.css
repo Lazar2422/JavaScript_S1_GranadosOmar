@@ -1,24 +1,29 @@
 body{
     margin: 0;
-    width: 1920px;
+    max-width: 1920px;
     height: 1080px;
-    background-image: url(../img/fondo.jpeg);
+    background-image: url(../imagenes/mesa.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    min-width: 10px;
 }
 .logo{
     position: absolute;
-    margin-left: 35vw;
+    width: 40%;
+    border-radius: 1000px;
+    margin-left: 30vw;
     margin-top: 12vh;
+    min-width: 10px;
 }
+
 .button1{
     position: absolute;
     height: 8vh;
     width: 15vw;
     font-size: 2rem;
     border: none;
-    margin-top: 80vh;
-    margin-left: 40vw;
+    margin-top: 53vh;
+    margin-left: 42vw;
     border-radius: 2vw;
     background-color: #FFD700;
 }
@@ -27,12 +32,16 @@ body{
     height: 8vh;
     width: 15vw;
     font-size: 2rem;
-    margin-left: 40vw;
+    margin-left: 42vw;
     border: none;
-    margin-top: 95vh;
+    margin-top: 70vh;
     border-radius: 2vw;
     background-color: #FFD700;
 }
 button:hover{
     cursor: pointer;
+    margin-left: 42.5vw;
+    box-shadow: -5px 1vw 2vh black;
+    width: 14vw;
+    height: 7vh;
 }

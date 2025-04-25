@@ -8,7 +8,7 @@
 .fondo{
     
     position: absolute ;
-    background-image:url("../img/fondo.jpeg");
+    background-image:url("../imagenes/mesa.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     width: 100%;
@@ -47,21 +47,45 @@
     left: 13%;
 }
 #jugador img{
-    z-index: 999999;
-    width: 15%;
-    left: 13%;
+    margin-top: -5%;
+    width: 10%;
+    left: 15%;
+}
+.oculta {
+    position: absolute;
+    opacity: 1;
+    z-index: 100;
+    margin-left: 30.5%;
+}
+#maquina img{
+    margin-top: -5%;
+    width: 10%;
+    left: 15%;
+}
+#maquina img{
+    position: absolute;
+    opacity: 100%;
 }
 .carta1{
-    margin-left: 0px;
+    
+    opacity: 100%;
+    position: absolute;
+    margin-left: 30.5%;
 }
-.carta2{
-    margin-left: 00px;
+#carta1{
+    opacity: 100%;
+}
+#oculta{
+    opacity: 0;
+}
+#carta1{
+    z-index: 999999999999999;
 }
 .botones{
     position: absolute;
     width: 5%;
     color: white;
-    margin-top: -30%;
+    margin-top: -18%;
 }
 #pedir{
     position: absolute;
@@ -102,4 +126,12 @@ button:hover{
     box-shadow: -5px 1vw 2vh black;
     width: 14vw;
     height: 7vh;
+}
+.puntaje{
+    margin-top: -35%;
+    margin-left: 70%;
+}
+.puntaje h2{
+    color: #FFD700;
+    padding: 30%;
 }
