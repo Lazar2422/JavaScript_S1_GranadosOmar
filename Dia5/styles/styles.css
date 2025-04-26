@@ -2,7 +2,7 @@ body{
     margin: 0;
     max-width: 1920px;
     height: 1080px;
-    background-image: url(../imagenes/mesa.jpg);
+    background-image: url(../img/mesa.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     min-width: 10px;
@@ -22,7 +22,7 @@ body{
     width: 15vw;
     font-size: 2rem;
     border: none;
-    margin-top: 53vh;
+    margin-top: 70vh;
     margin-left: 42vw;
     border-radius: 2vw;
     background-color: #FFD700;
@@ -34,7 +34,7 @@ body{
     font-size: 2rem;
     margin-left: 42vw;
     border: none;
-    margin-top: 70vh;
+    margin-top: 80vh;
     border-radius: 2vw;
     background-color: #FFD700;
 }

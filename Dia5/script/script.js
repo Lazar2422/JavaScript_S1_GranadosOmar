@@ -1,65 +1,67 @@
-function fetch21(){
-    let xhr = new XMLHttpRequest();
-    let link= `https://deckofcardsapi.com/api/deck/new/draw/?count=2`;
-    xhr.open('GET',link,true);
-    xhr.onreadystatechange = function(){
-        if(this.status ==200){
-            let respuesta = JSON.parse(this.responseText);
-            console.log(respuesta);
-            let sacar = document.getElementById(`pedir`)
-            sacar.addEventListener("click", function(){
-                displaycartasmaquina(respuesta);
-                displaycartasjugador(respuesta);
-            })
-            let voltear = document.getElementById("plantarse")
-            voltear.addEventListener("click", function(){
-                cartav1=data["cards"]["1"]["value"]
-                cartav2=data["cards"]["0"]["value"]
-                cartasjugador.innerHTML=`
-                <img id="carta1" class="carta1" src="${data["cards"]["1"]["images"]["png"]}">
-                `
-                nombrepokeHTML.innerHTML=`
-                <img id="carta1" class="carta1" src="${data["cards"]["0"]["images"]["png"]}">
-                `
-                if (cartav1>cartav2){
-                    let contador1=0
-                    contador1++
-                    marcador = document.getElementById(`yo`)
-                    marcador.innerHTML=`
-                    <p>${contador1}</p>`
-                } else if (cartav1<cartav2){
-                    let contador2=0
-                    contador2++
-                    marcador2 = document.getElementById(`oponente`)
-                    marcador2.innerHTML=`
-                    <p>${contador2}</p>`
-                }
-            })
-        }
-    };
-    xhr.send();
+function fetch21() {
+	let xhr = new XMLHttpRequest();
+	let link = `https://deckofcardsapi.com/api/deck/new/draw/?count=2`;
+	xhr.open('GET', link, true);
+	xhr.onreadystatechange = function () {
+		if (this.readyState === 4 && this.status === 200) {
+			let respuesta = JSON.parse(this.responseText);
+			console.log(respuesta);
+
+			let sacar = document.getElementById(`pedir`);
+			sacar.addEventListener("click", function () {
+				displaycartasmaquina(respuesta);
+				displaycartasjugador(respuesta);
+			});
+
+			let voltear = document.getElementById("plantarse");
+			voltear.addEventListener("click", function () {
+				let cartaJugador = respuesta.cards[1];
+				let cartaMaquina = respuesta.cards[0];
+
+				cartasjugador.innerHTML = `<img class="carta1" src="${cartaJugador.images.png}">`;
+				nombrepokeHTML.innerHTML = `<img class="carta1" src="${cartaMaquina.images.png}">`;
+
+				let valor1 = obtenerValorCarta(cartaJugador.value);
+				let valor2 = obtenerValorCarta(cartaMaquina.value);
+
+				if (valor1 > valor2) {
+					marcador.innerHTML = `<p>${++contador1}</p>`;
+				} else if (valor2 > valor1) {
+					marcador2.innerHTML = `<p>${++contador2}</p>`;
+				}
+			});
+		}
+	};
+	xhr.send();
 }
+
 let cartasjugador = document.getElementById('jugador');
-function displaycartasjugador(data){
-    if(data.response == "error"){
-        cartasjugador.innerHTML=`<p>Esto no funcionó :sadfeis:</p>`;
-    }else{
-        let cartav1= data["cards"]["1"]["value"];
-        cartasjugador.innerHTML=`
-        <img class="oculta" src="./imagenes/back.png">
-        <img class="carta1" src="${data["cards"]["1"]["images"]["png"]}">
-        `
-    }
-}
 let nombrepokeHTML = document.getElementById('maquina');
-function displaycartasmaquina(data){
-    if(data.response == "error"){
-        nombrepokeHTML.innerHTML=`<p>Esto no funcionó :sadfeis:</p>`;
-    }else{
-        let cartav2= data["cards"]["0"]["value"];
-        nombrepokeHTML.innerHTML=`
-        <img class="oculta" src="./imagenes/back.png">
-        <img class="carta1" src="${data["cards"]["0"]["images"]["png"]}">
-        `
-    }}
+let marcador = document.getElementById('yo');
+let marcador2 = document.getElementById('oponente');
+let contador1 = 0;
+let contador2 = 0;
+
+function displaycartasjugador(data) {
+	if (data.response == "error") {
+		cartasjugador.innerHTML = `<p>Esto no funcionó 😢</p>`;
+	} else {
+		cartasjugador.innerHTML = `<img class="oculta" src="./img/back.png">`;
+	}
+}
+
+function displaycartasmaquina(data) {
+	if (data.response == "error") {
+		nombrepokeHTML.innerHTML = `<p>Esto no funcionó 😢</p>`;
+	} else {
+		nombrepokeHTML.innerHTML = `<img class="oculta" src="./img/back.png">`;
+	}
+}
+
+function obtenerValorCarta(valor) {
+	if (!isNaN(valor)) return parseInt(valor);
+	if (valor === "ACE") return 11;
+	return 10;
+}
+
 fetch21();
