@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button><a href="./index.html">Volver</a></button>
+        <form id="formulario">
+            <input id="identificador" type="text" placeholder="Cual es el id del gey" required>
+            <input id="name" type="text" placeholder="Cual es el nombre del gey que quieres editar" required>
+            <select id="sex" required>
+                <option>Female</option>
+                <option>Male</option>
+            </select>
+            <input id="edad" type="number" placeholder="Dame la edad" required>
+            <input id="ets" type="number" placeholder="Cuantas ets tiene" required>
+            <input  id="subir" type="submit">
+        </form>
+        
+    </div>
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+<script type="module" src="./jss/Update.js"></script>
+</html>
