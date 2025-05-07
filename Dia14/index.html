@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heroes</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+    <div id="conteiner">
+        <div id="titulo">
+            <p>Mis heroes</p>
+        </div>
+        <div id="main">
+            <h1>Gestion de heroes</h1>
+            <label>
+            <form id="formulario">
+                <h4>Nombre Personaje</h4>
+                <input type="text" id="nombre_per" />
+                <h4>Nombre Actor</h4>
+                <input type="text" id="nombre_act" />
+                <h4>Edad Actor</h4>
+                <input type="text" id="edad" />
+                <h4>Ubicacion</h4>
+                <input type="text" id="ubicacion" />
+                <p>Nombre de la ciudad de origen</p>
+                <h4>Poster</h4>
+                <input type="text" id="poster" />
+                <h4>Ubicacion</h4>
+                <input type="date" id="nacimiento" />
+                <h4>Productora</h4>
+                <select id="productora">
+                <option>Marvel</option>
+                <option>DC Comics</option>
+                </select>
+            <div id="seccion_trajes">
+                <div id="titulo">
+                    <p>Registro de trajes</p>
+                </div>
+                <div id="registro_trajes">
+                    <h1>Trajes del personaje</h1>
+                    <p>
+                        En esta seccion podras registrar el nombre de los trajes usados
+                        por el actor en cada una de las peliculas
+                    </p>
+                    <button id="adding">+</button>
+                </div>
+                <button id="nuevo_hereo">Nuevo heroe</button>
+                <input type="submit" value="Guardar heroe">
+            </form>
+            </label>
+            <button>Cancelar</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+<script src="./jss/script.js"></script>
+</html>
