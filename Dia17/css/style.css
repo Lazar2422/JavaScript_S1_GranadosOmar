@@ -1,0 +1,9 @@
+.imagen{
+    width: 100px;
+    height: 100px;
+}
+#mostrar button{
+    background-color: white;
+    border: none;
+    text-decoration: none;
+}
